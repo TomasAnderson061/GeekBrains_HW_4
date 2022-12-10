@@ -48,9 +48,13 @@ int SumOfNumbers(int num)
 // 6, 1, 33 -> [6, 1, 33]
 
 
-Console.WriteLine("Введите длину массива: ");
+l1: Console.WriteLine("Введите длину массива: ");
 int length = Convert.ToInt32(Console.ReadLine());
-
+if (length==0) 
+{
+    Console.WriteLine($"Длина массива должна быть больше 0");
+    goto l1;
+}
 int[] UserArray()
 {
     int [] array = new int [length];
@@ -64,6 +68,6 @@ void ShowArray (int[] arr)
 {   Console.WriteLine($"Массив, введенный вами:");
     for (int i = 0; i < length; i++)
     Console.Write($"{arr[i]} ");
-    
+    Console.WriteLine();
 }
 ShowArray(UserArray());
